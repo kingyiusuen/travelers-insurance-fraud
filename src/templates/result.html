@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8"></div>
+    <p>The probability that this insurance claim is fraudulent is <span class="font-weight-bold">{{ probability }}%</spanclass>.</p>
+  </div>
+</div>
+<div class="row justify-content-center py-5">
+  <a class="btn btn-primary btn-lg" href="javascript:history.back();" role="button">Back</a>
+</div>
+{% endblock %}

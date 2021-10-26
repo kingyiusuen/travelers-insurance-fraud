@@ -1,0 +1,21 @@
+reports
+
+# Editors
+.vscode
+
+# Python
+__pycache__
+.ipynb_checkpoints
+.mypy_cache
+*.egg-info
+
+# pytest
+.coverage*
+.pytest_cache
+htmlcov
+
+# Virtual environment
+venv
+
+# Misc
+.DS_Store

@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form class="needs-validation" action="{{ url_for('predict')}}" method="post">
+  <h4 class="mb-3">Driver</h4>
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <label for="age-of-driver">Age</label>
+      <input type="text" class="form-control" name="age_of_driver" placeholder="" value="39" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="zip-code">Zip code</label>
+      <input type="text" class="form-control" name="zip_code" placeholder="" value="50048" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="annual-income">Annual income</label>
+      <input type="text" class="form-control" name="annual_income" placeholder="" value="36633" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-3">
+        <label for="past-num-of-claims">Number of claims in past 5 years</label>
+        <input type="text" class="form-control" name="past_num_of_claims" placeholder="" value="0" required>
+      </div>  
+    <div class="col-md-8 mb-3">
+      <label for="safty-rating">Safety rating index</label>
+      <input type="text" class="form-control" name="safty_rating" placeholder="" value="73" required>
+      <small class="text-muted">A score to measure driver's safety level or possibility of having an accident (0 - 100)</small>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 my-3">
+      <label for="gender">Gender</label>
+      <select class="custom-select d-block w-100" name="gender" required>
+        <option>Female</option>
+        <option>Male</option>
+      </select>
+    </div>
+    <div class="col-md-4 my-3">
+      <label for="marital-status">Are you been married?</label>
+      <select class="custom-select d-block w-100" name="marital_status" required>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+    <div class="col-md-4 my-3">
+      <label for="living-status">Living status</label>
+      <select class="custom-select d-block w-100" name="living_status" required>
+        <option>Own</option>
+        <option>Rent</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 my-3">
+      <label for="high-education-ind">Do you have a college degree?</label>
+      <select class="custom-select d-block w-100" name="high_education_ind" required>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>    
+    <div class="col-md-8 my-3">
+      <label for="address-change-ind">Did you change your living address in past 1 year?</label>
+      <select class="custom-select d-block w-100" name="address_change_ind" required>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+  </div>
+  <hr class="mb-4">
+  <h4 class="mb-3">Claim</h4>
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <label for="claim-est-payout">Estimated claim payout</label>
+      <input type="text" class="form-control" name="claim_est_payout" placeholder="" value="5196" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="liab-prct">Liability percentage of the claim</label>
+      <input type="text" class="form-control" name="liab_prct" placeholder="" value="25" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 my-3">
+      <label for="witness-present-ind">Was a witness present?</label>
+      <select class="custom-select d-block w-100" name="witness_present_ind" required>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+    <div class="col-md-8 my-3">
+      <label for="policy-report-filed-ind">Did a third party request policy report after the claim?</label>
+      <select class="custom-select d-block w-100" name="policy_report_filed_ind" required>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+      <small class="text-muted">The third party could be attorney, provider or police department, etc</small>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <label for="accident-site">Accident location</label>
+      <select class="custom-select d-block w-100" name="accident_site" required>
+        <option>Highway</option>
+        <option>Local</option>
+        <option>Parking Lot</option>
+      </select>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="channel">Channel of policy purchasing</label>
+      <select class="custom-select d-block w-100" name="channel" required>
+        <option>Broker</option>
+        <option>Online</option>
+        <option>Phone</option>
+      </select>
+    </div>
+  </div>
+  <hr class="mb-4">
+  <h4 class="mb-3">Vehicle</h4>
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <label for="age-of-vehicle">Age</label>
+      <input type="text" class="form-control" name="age_of_vehicle" placeholder="" value="8" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="vehicle-price">Price</label>
+      <input type="text" class="form-control" name="vehicle_price" placeholder="" value="24360" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="vehicle-weight">Weight</label>
+      <input type="text" class="form-control" name="vehicle_weight" placeholder="" value="26633" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <label for="vehicle-category">Category</label>
+      <select class="custom-select d-block w-100" name="vehicle_category" required>
+        <option>Compact</option>
+        <option>Medium</option>
+        <option>Large</option>
+      </select>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="vehicle-color">Color</label>
+      <select class="custom-select d-block w-100" name="vehicle_color" required>
+        <option>Blue</option>
+        <option>Black</option>
+        <option>Gray</option>
+        <option>Other</option>
+        <option>Red</option>
+        <option>Silver</option>
+        <option>White</option>
+      </select>
+    </div>
+  </div>
+  <hr class="mb-4">
+  <div class="row justify-content-center">
+    <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+  </div>
+</form>
+{% endblock %}
