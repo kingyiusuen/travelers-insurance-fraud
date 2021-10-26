@@ -1,8 +1,10 @@
 # Traverlers Insurance Claim Fraud Detection
 
+![](https://i.imgur.com/QffJHZY.gif)
+
 This project was originally a modeling competition for the class STAT 8501 Advancned Regression Technique, hosted by [Travelers Insurance](https://www.travelers.com). The task was to predict which insurance claim was fraudulent. The rules of this competition can be found in [Kaggle](https://www.kaggle.com/c/2018-trv-statistical-modeling-competition-umn). My team ranked 2nd place out of 8 teams.
 
-The code my team used was quite messy and not really reproducible. I completely re-organized it and deployed the model as a web app.
+The code my team used was quite messy and not really reproducible. I completely re-organized it and deployed the model as a web app ([http://ec2-3-88-168-16.compute-1.amazonaws.com:8080/](http://ec2-3-88-168-16.compute-1.amazonaws.com:8080/)).
 
 ## Directory Structure
 
