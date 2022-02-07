@@ -2,9 +2,7 @@
 
 ![](https://i.imgur.com/QffJHZY.gif)
 
-This project was originally a modeling competition for the class STAT 8501 Advancned Regression Technique, hosted by [Travelers Insurance](https://www.travelers.com). The task was to identify first party physical damage fraudulence. The rules of this competition can be found in [Kaggle](https://www.kaggle.com/c/2018-trv-statistical-modeling-competition-umn). My team ranked 2nd place out of 8 teams.
-
-The code my team used was quite messy and not really reproducible. I completely re-organized it and deployed the model as a web app ([http://ec2-3-88-168-16.compute-1.amazonaws.com:8080/](http://ec2-3-88-168-16.compute-1.amazonaws.com:8080/)).
+This project was originally a modeling competition for the class STAT 8501 Advancned Regression Technique, hosted by [Travelers Insurance](https://www.travelers.com). The task was to identify first party physical damage fraudulence. The rules of this competition can be found in [Kaggle](https://www.kaggle.com/c/2018-trv-statistical-modeling-competition-umn). My team ranked 2nd place out of 8 teams. The code my team used was quite messy and not really reproducible. I completely re-organized it and deployed it as a Flask app.
 
 ## Directory Structure
 
@@ -22,7 +20,7 @@ The code my team used was quite messy and not really reproducible. I completely 
 │   ├── 1-data-exploration.ipynb       <- Explore data with histograms, correlation matrix, etc.
 │   ├── 2-data-preprocessing.ipynb     <- Data cleaning, feature engineering.
 │   └── 3-modeling.ipynb               <- Cross validation, hyperparameter tuning.
-├── requirements.txt               
+├── requirements.txt
 └── src                            <- Source code for the web app.
     ├── app.py                         <- Flask API.
     ├── templates                      <- HTML files.
@@ -62,7 +60,3 @@ The training set has 18,000 samples and the test set has 12,000 samples. The fol
 The goal is to predict `fraud` with other variables. The evaluation metric is AUC.
 
 I used a 5-fold cross-validation to compare the performance of k-nearest neighbors, random forest, logistic regression and gradient boosting. Gradient boosting had the best performance, so I did some hyperparameter tuning on it using random searh. The final model had an AUC of 0.74 on the test set, and was deployed as a web app on an AWS EC2 Instance.
-
-## Acknowledegments
-
-- [How to Deploy a Flask App on AWS EC2 Instance](https://www.twilio.com/blog/deploy-flask-python-app-aws)
