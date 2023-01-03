@@ -15,7 +15,6 @@ latitude_and_longitude_lookup = {
 
 def preprocess(data: Dict[str, Any]) -> Dict[str, Any]:
     data["gender"] = "M" if data["gender"] == "Male" else "F"
-    data["vehicle_color"] = data["vehicle_color"].lower()
 
     zip_code = int(data.pop("zip_code"))
     data["latitude"], data["longitude"] = latitude_and_longitude_lookup[zip_code]
